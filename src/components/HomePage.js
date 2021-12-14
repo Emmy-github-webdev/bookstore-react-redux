@@ -1,9 +1,10 @@
 import React from 'react';
+import BookList from './book/BookList';
 
 function HomePage() {
   return (
     <div>
-      Welcome to homepage
+      <BookList />
     </div>
   );
 }
