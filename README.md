@@ -45,6 +45,7 @@ To get a local copy up and running follow these simple example steps.
 - react-redux 
 - redux-thunk 
 - redux-devtools-extension
+- react-router-dom
 
 ## Authors
 
