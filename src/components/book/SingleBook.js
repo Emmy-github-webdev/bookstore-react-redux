@@ -12,11 +12,9 @@ const SingleBook = (props) => {
           <span className="book-author">{singleBook.author}</span>
         </div>
         <div className="action">
-          <ul>
-            <li>Comments</li>
-            <li>Remove</li>
-            <li>Edit</li>
-          </ul>
+          <span><button type="button">Comments</button></span>
+          <span><button type="button">Remove</button></span>
+          <span><button type="button">Edit</button></span>
         </div>
       </div>
       <div className="action-progress">
