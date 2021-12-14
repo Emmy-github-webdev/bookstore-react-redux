@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Book Store
 
-> One paragraph statement about the project.
+> Implementation of ReactJS and Redux.
 
 ![screenshot](./app_screenshot.png)
 
@@ -10,13 +10,11 @@ Additional description about the project and its features.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Major languages: ReactJS, Redux
+- Frameworks: Babel, Webpack, Flexbox
+- Technologies used: Javascript
 
-## Live Demo
 
-[Live Demo Link](https://livedemo.com)
 
 
 ## Getting Started
@@ -27,39 +25,46 @@ Additional description about the project and its features.
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
 
-### Setup
+## Prerequisites
+- A working Laptop or Desktop
+## Setup
+- Install code editor
+- Install Git bash
+- Create react app
+- Install webpack
+- Install Babel
+- Install jest for testing
+## Install
+- clone the [math magicians](https://github.com/Emmy-github-webdev/math-magicians).
+## Usage
+- Test your GitHub flow, a linter and professional documentation ability
+## Run tests
+- Run npm run start to run the project
+- Run npm run test for testing
+## Deployment
+- Deploy to either [Heroku](https://www.heroku.com/), [Netlify](https://www.netlify.com/),
+- Navigate to page in the prject settings and publish
 
-### Install
+## Dependencies
 
-### Usage
+- redux 
+- react-redux 
+- redux-thunk 
+- redux-devtools-extension
+- react-router-dom
 
-### Run tests
-
-### Deployment
-
-
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+# Authors
+👤 **Emmanuel Oga**
+- GitHub: [Emmy-github-webdev](https://github.com/Emmy-github-webdev)
+- Twitter: [@ogaemmanuel](https://twitter.com/OgaemmanuelOga).
+- LinkedIn: [@ogaemmanuel](https://www.linkedin.com/in/emmanuel-oga-16171584/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the (https://github.com/Emmy-github-webdev/bookstore-react-redux/issues).
 
 ## Show your support
 
