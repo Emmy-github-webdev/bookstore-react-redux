@@ -9,7 +9,7 @@ import {
   FormWrapper,
   Headings,
   Button,
-} from './AddBookElements';
+} from './AddBookStyles';
 
 const AddBook = () => {
   const dispatch = useDispatch();
