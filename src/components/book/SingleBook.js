@@ -1,35 +1,61 @@
 import React from 'react';
+import { Progress } from 'antd';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../../redux/books/Books';
 
 const SingleBook = (props) => {
+  const dispatch = useDispatch();
   const { singleBook } = props;
+  const {
+    id, genre, title, author, percent, chapter,
+  } = singleBook;
 
   return (
-    <div className="bookContainer">
-      <div className="book-info-list">
-        <div className="book-info">
-          <span className="book-action">{singleBook.action}</span>
-          <h3 className="book-title">{singleBook.title}</h3>
-          <span className="book-author">{singleBook.author}</span>
+    <div className="single-book-container">
+      <div className="single-book">
+        <div className="text">
+
+          <span className="single-book-action">{genre}</span>
+          <h2>{title}</h2>
+          <span className="single-book-author">{author}</span>
+
         </div>
-        <div className="action">
-          <span><button type="button">Comments</button></span>
-          <span><button type="button">Remove</button></span>
-          <span><button type="button">Edit</button></span>
+
+        <div className="single-book-options">
+          <ul>
+            <li>Comments</li>
+            <li onClick={() => dispatch(removeBook(id))} aria-hidden="true">Remove</li>
+            <li>Edit</li>
+          </ul>
         </div>
       </div>
-      <div className="action-progress">
-        <span className="book-completed">
-          {singleBook.completed}
-          %
-        </span>
-        <span className="book-text">completed</span>
-      </div>
-      <div className="book-progress">
-        <span className="book-current-chapter">Current Chapter</span>
-        <span className="book-chapter">{singleBook.chapter}</span>
+
+      <div className="right-container">
+
+        <div className="percent">
+          <Progress type="circle" percent={percent} showInfo={false} strokeColor="#379cf6" className="percent-range" />
+          <div className="percent-inner">
+            <span className="percent-info">
+              {percent}
+              %
+            </span>
+            <span className="completed">Completed</span>
+          </div>
+        </div>
+
+        <div className="singlebook-Current-chapter">
+          <span className="currentChapter">CURRENT CHAPTER</span>
+          <span className="numberChapter">{chapter}</span>
+          <button className="updateButton" type="button"><span>UPDATE PROGRESS</span></button>
+        </div>
       </div>
     </div>
+
   );
+};
+SingleBook.propTypes = {
+  singleBook: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default SingleBook;

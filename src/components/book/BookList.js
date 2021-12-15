@@ -1,44 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import SingleBook from './SingleBook';
 import AddBook from './AddBook';
+import Message from '../Message';
 
-const BookList = () => {
-  const [data] = useState([
-    {
-      id: 1,
-      action: 'action',
-      title: 'JavaScript for beginners',
-      author: 'John Doe',
-      completed: '64',
-      chapter: 'Chapter 17',
-    },
-    {
-      id: 2,
-      action: 'action',
-      title: 'ReactJS for beginners',
-      author: 'Jane Doe',
-      completed: '8',
-      chapter: 'Chapter 1',
-    },
-    {
-      id: 3,
-      action: 'action',
-      title: 'HTML & CSS for beginners',
-      author: 'Dominic Joe',
-      completed: '0',
-      chapter: 'Introduction',
-    },
-  ]);
+const BooksList = () => {
+  const bookList = useSelector((state) => state.booksReducer);
 
   return (
-    <div>
-      {data.map((book) => (
-        <SingleBook singleBook={book} key={book.id} />
-      ))}
-      ;
-      <AddBook />
-    </div>
+    <>
+      <div className="booklistContainer">
+
+        {bookList.length
+          ? bookList.map((book) => (<SingleBook singleBook={book} key={book.id} />))
+          : <Message />}
+
+        <AddBook />
+
+      </div>
+
+    </>
+
   );
 };
-
-export default BookList;
+export default BooksList;
