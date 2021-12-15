@@ -1,7 +1,8 @@
+import { getBooks, newBook, deleteBook } from './Api';
+
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 const GET_BOOK = 'bookStore/books/GET_BOOK';
-import {getBooks, newBook, deleteBook} from './Api';
 
 const initialState = [];
 
@@ -32,19 +33,18 @@ export const loadBooks = () => (dispatch) => {
   });
 };
 
-
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      newBook(action.payload)
+      newBook(action.payload);
       return [...state, action.payload];
 
     case REMOVE_BOOK:
-      deleteBook(action.payload)
+      deleteBook(action.payload);
       return state.filter((book) => book.id !== action.payload);
     case GET_BOOK:
       return [...state, action.payload];
-  
+
     default:
       return state;
   }

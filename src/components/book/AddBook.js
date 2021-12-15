@@ -6,7 +6,7 @@ import { addBook } from '../../redux/books/Books';
 
 const AddBook = () => {
   const dispatch = useDispatch();
-  const [newBook, setNewBook] = useState({ title: ''});
+  const [newBook, setNewBook] = useState({ title: '' });
   // const { Option } = Select;
 
   const addBookNameHandler = (e) => {
@@ -14,10 +14,9 @@ const AddBook = () => {
   };
 
   const submitHandler = () => {
-    const { title} = newBook;
+    const { title } = newBook;
 
     if (title.length) {
-      const randomPercent = (Math.random() * 100).toFixed(0);
       const newBook = {
         item_id: uuid(),
         title,
