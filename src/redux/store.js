@@ -1,12 +1,14 @@
 /* eslint max-len: ["error", { "code": 500 }] */
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import logger from 'redux-logger';
+import booksReducer from './books/Books';
 
-const reducer = combineReducers({});
-const initialState = {};
-const middleware = [thunk];
+const reducer = combineReducers({
+  booksReducer,
+  // additional reducers could be added here
+});
 
-const store = createStore(reducer, initialState, composeWithDevTools(applyMiddleware(...middleware)));
+const store = createStore(reducer,
+  applyMiddleware(logger));
 
 export default store;
