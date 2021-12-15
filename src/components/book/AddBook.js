@@ -1,44 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
+import { Input, message } from 'antd';
+
 import { addBook } from '../../redux/books/Books';
-import {
-  FormContainer,
-  AddBookInput,
-  CategoryInput,
-  FormWrapper,
-  Headings,
-  Button,
-} from './AddBookStyles';
 
 const AddBook = () => {
   const dispatch = useDispatch();
+  const [newBook, setNewBook] = useState({ title: '', author: '' });
+  // const { Option } = Select;
 
-  const submitBookToStore = (e) => {
-    e.preventDefault();
-    const newBook = {
-      id: uuidv4(),
-      title: e.target.title.value,
-      author: e.target.author.value,
+  const addBookNameHandler = (e) => {
+    setNewBook({ ...newBook, title: e.target.value });
+  };
 
-    };
+  const authorHanlder = (e) => {
+    setNewBook({ ...newBook, author: e.target.value });
+  };
 
-    dispatch(addBook(newBook));
-    e.target.title.value = '';
-    e.target.author.value = '';
+  const submitHandler = () => {
+    const { title, author } = newBook;
+
+    if (title.length && author.length) {
+      const randomPercent = (Math.random() * 100).toFixed(0);
+      const newBook = {
+        id: uuid(),
+        title,
+        author,
+        percent: randomPercent,
+
+      };
+
+      dispatch(addBook(newBook));
+      message.success(`New book added: ${title} `);
+      setNewBook({ author: '', title: '' });
+    } else {
+      message.warning('Try again: Check inputs');
+    }
   };
 
   return (
-    <FormWrapper id="add-books">
-      <Headings>ADD NEW BOOK</Headings>
-      <FormContainer onSubmit={submitBookToStore}>
-        <AddBookInput placeholder="Book title" name="title" />
-        <AddBookInput placeholder="Book author" name="author" />
-        <CategoryInput placeholder="Not available" />
-        <Button type="submit">ADD BOOK</Button>
-      </FormContainer>
-    </FormWrapper>
+    <div className="addBook-container">
+      <div className="book-inner-info">
+
+        <Input placeholder="Add Book" onChange={addBookNameHandler} value={newBook.title} className="book-name" />
+        <Input placeholder="Author" onChange={authorHanlder} value={newBook.author} className="book-author" />
+        <button className="submitButton" type="button" onClick={submitHandler}><span>ADD BOOK</span></button>
+
+      </div>
+    </div>
   );
 };
-
 export default AddBook;
