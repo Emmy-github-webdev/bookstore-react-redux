@@ -35,7 +35,7 @@ const AddBook = () => {
       message.success(`New book added: ${title} `);
       setNewBook({ author: '', title: '' });
     } else {
-      message.warning('Try again: Check inputs');
+      message.warning('Try again: the fileds cannot be empty');
     }
   };
 
