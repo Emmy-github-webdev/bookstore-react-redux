@@ -4,17 +4,23 @@ import SingleBook from './SingleBook';
 import AddBook from './AddBook';
 import Message from '../Message';
 
-const BookList = () => {
-  const bookList = useSelector((state) => state.bookReducer);
+const BooksList = () => {
+  const bookList = useSelector((state) => state.booksReducer);
 
   return (
-    <div className="booklist-container">
-      {
-        bookList.length ? bookList.map((book) => (<SingleBook singleBook={book} key={book.id} />)) : <Message />
-      }
-      <AddBook />
-    </div>
+    <>
+      <div className="booklistContainer">
+
+        {bookList.length
+          ? bookList.map((book) => (<SingleBook singleBook={book} key={book.id} />))
+          : <Message />}
+
+        <AddBook />
+
+      </div>
+
+    </>
+
   );
 };
-
-export default BookList;
+export default BooksList;

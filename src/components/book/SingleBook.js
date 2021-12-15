@@ -1,77 +1,61 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { Progress } from 'antd';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
-import {
-  BookCardWrapper,
-  BookSectionOne,
-  BookCategory,
-  BookContainer,
-  BookTitle,
-  BookAuthor,
-  BookCommandsWrapper,
-  Comments,
-  BookRemove,
-  BookEdit,
-  BookSectionTwo,
-  CircleCenter,
-  CompletedWrapper,
-  CompletedPerc,
-  CompletedText,
-  BookSectionThree,
-  BookChapter,
-  BookLesson,
-  UpdateProgress,
-  BookLineDivider,
-} from './singleBookStyles';
-import { removeBook } from '../../redux/books/books';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../../redux/books/Books';
 
-const SingleBook = ({ title, author }) => {
+const SingleBook = (props) => {
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.books);
-
-  const removeBookFromStore = (e) => {
-    const listItem = e.target.parentNode.parentNode;
-    const bookId = listItem.getAttribute('data-id');
-    const book = _.find(books, { id: bookId });
-
-    dispatch(removeBook(book));
-  };
+  const { singleBook } = props;
+  const {
+    id, genre, title, author, percent, chapter,
+  } = singleBook;
 
   return (
-    <BookContainer>
-      <BookCardWrapper>
-        <BookSectionOne>
-          <BookCategory>Prayer Book</BookCategory>
-          <BookTitle>{title}</BookTitle>
-          <BookAuthor>{author}</BookAuthor>
-          <BookCommandsWrapper>
-            <Comments>Comments</Comments>
-            <BookRemove onClick={removeBookFromStore}>Remove</BookRemove>
-            <BookEdit>Edit</BookEdit>
-          </BookCommandsWrapper>
-        </BookSectionOne>
-        <BookSectionTwo>
-          <CircleCenter />
-          <CompletedWrapper>
-            <CompletedPerc>8%</CompletedPerc>
-            <CompletedText>Completed</CompletedText>
-          </CompletedWrapper>
-        </BookSectionTwo>
-        <BookLineDivider />
-        <BookSectionThree>
-          <BookChapter>Current Chapter</BookChapter>
-          <BookLesson>Chapter3: ALessonLearned </BookLesson>
-          <UpdateProgress>Update progress</UpdateProgress>
-        </BookSectionThree>
-      </BookCardWrapper>
-    </BookContainer>
+    <div className="single-book-container">
+      <div className="single-book">
+        <div className="text">
+
+          <span className="single-book-action">{genre}</span>
+          <h2>{title}</h2>
+          <span className="single-book-author">{author}</span>
+
+        </div>
+
+        <div className="single-book-options">
+          <ul>
+            <li>Comments</li>
+            <li onClick={() => dispatch(removeBook(id))} aria-hidden="true">Remove</li>
+            <li>Edit</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="right-container">
+
+        <div className="percent">
+          <Progress type="circle" percent={percent} showInfo={false} strokeColor="#379cf6" className="percent-range" />
+          <div className="percent-inner">
+            <span className="percent-info">
+              {percent}
+              %
+            </span>
+            <span className="completed">Completed</span>
+          </div>
+        </div>
+
+        <div className="singlebook-Current-chapter">
+          <span className="currentChapter">CURRENT CHAPTER</span>
+          <span className="numberChapter">{chapter}</span>
+          <button className="updateButton" type="button"><span>UPDATE PROGRESS</span></button>
+        </div>
+      </div>
+    </div>
+
   );
 };
-
-BookCard.propTypes = {
-  title: PropTypes.node.isRequired,
-  author: PropTypes.node.isRequired,
+SingleBook.propTypes = {
+  singleBook: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default SingleBook;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../../redux/books/books';
+import { addBook } from '../../redux/books/Books';
 import {
   FormContainer,
   AddBookInput,
@@ -34,7 +34,7 @@ const AddBook = () => {
       <FormContainer onSubmit={submitBookToStore}>
         <AddBookInput placeholder="Book title" name="title" />
         <AddBookInput placeholder="Book author" name="author" />
-        <CategoryInput placeholder="Under construction" />
+        <CategoryInput placeholder="Not available" />
         <Button type="submit">ADD BOOK</Button>
       </FormContainer>
     </FormWrapper>
