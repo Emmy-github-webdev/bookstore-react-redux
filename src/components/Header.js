@@ -7,11 +7,8 @@ function Header() {
     <nav className="navbar">
       <div className="container-icon"><Link to="/" className="primary-icon">Bookstore CMS</Link></div>
       <div className="nav-list" id="nav-list">
-        <Link to="/books" className="nav-item">Books</Link>
-        {' '}
-        |
-        {' '}
-        <Link to="/categories" className="nav-item">Categories</Link>
+        <Link to="/" className="book">Books</Link>
+        <Link to="/categories" className="categories">Categories</Link>
       </div>
       <div className="menu" id="toggle-button">
         <div className="menu-line" />
