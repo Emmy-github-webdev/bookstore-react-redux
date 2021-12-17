@@ -8,17 +8,18 @@ const SingleBook = (props) => {
   const dispatch = useDispatch();
   const { singleBook } = props;
   const {
-    id, genre, title, author, percent, chapter,
+    id, title, category,
   } = singleBook;
+
+  const percent = (Math.random() * 100).toFixed(0);
 
   return (
     <div className="single-book-container">
       <div className="single-book">
         <div className="text">
-
-          <span className="single-book-action">{genre}</span>
+          <span className="single-book-category">{category}</span>
           <h2>{title}</h2>
-          <span className="single-book-author">{author}</span>
+          <span className="single-book-author">author</span>
 
         </div>
 
@@ -46,7 +47,7 @@ const SingleBook = (props) => {
 
         <div className="singlebook-Current-chapter">
           <span className="currentChapter">CURRENT CHAPTER</span>
-          <span className="numberChapter">{chapter}</span>
+          <span className="numberChapter">chapter</span>
           <button className="updateButton" type="button"><span>UPDATE PROGRESS</span></button>
         </div>
       </div>
