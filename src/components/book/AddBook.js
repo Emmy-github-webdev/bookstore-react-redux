@@ -3,6 +3,7 @@ import { v4 as uuid } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { Input, message } from 'antd';
 import { addBook } from '../../redux/books/Books';
+import './addBook.css';
 
 const AddBook = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const AddBook = () => {
 
   return (
     <div className="addBook-container">
+      <h2>Add New Book</h2>
       <div className="book-inner-info">
 
         <Input placeholder="Add Book" onChange={addBookNameHandler} value={newBook.title} className="book-name" />
