@@ -10,8 +10,10 @@ const BooksList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadBooks());
-  }, []);
+    if (bookList === 0) {
+      dispatch(loadBooks());
+    }
+  }, [bookList]);
   return (
     <>
       <div className="booklistContainer">

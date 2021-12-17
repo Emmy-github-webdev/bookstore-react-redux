@@ -1,0 +1,131 @@
+.single-book-container {
+  margin: 2.313rem 6.25rem 0;
+  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  border-radius: 4px;
+  background: #fff;
+  border: solid 1px #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.single-book-category,
+.text h2,
+.single-book-author {
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+}
+
+.single-book-category {
+  margin: 0 2.438rem 0 0;
+  opacity: 0.5;
+  font-size: 0.875rem;
+  letter-spacing: normal;
+  color: #000;
+}
+
+.text h2 {
+  margin: 0.188rem 20.188rem 0 0;
+  font-size: 1.375rem;
+  letter-spacing: -0.2px;
+}
+
+.single-book-author {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.single-book-options ul {
+  display: flex;
+}
+
+.single-book-options ul li {
+  list-style-type: none;
+}
+
+.comments,
+.remove,
+.edit {
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.comments {
+  margin: 0.188rem 0.938rem 0.125rem 0;
+}
+
+.remove {
+  margin: 0.188rem 0.938rem 0.125rem 1.063rem;
+  cursor: pointer;
+}
+
+.edit {
+  margin: 0.188rem 18.625rem 0.125rem 1.063rem;
+}
+
+.right-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-right: 50%;
+}
+
+.percent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.percent-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.percent-info {
+  font-size: 1.1rem;
+  color: #000;
+}
+
+.currentChapter,
+.percent-info,
+.numberChapter,
+.updateButton span {
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.singlebook-Current-chapter {
+  margin-left: 1rem;
+}
+
+.currentChapter {
+  font-size: 0.7rem;
+}
+
+.numberChapter {
+  font-size: 1rem;
+}
+
+.updateButton {
+  padding: 3px 35px;
+  background-color: #33a7ff;
+  border: solid 1px #e8e8e8;
+}
+
+.updateButton span {
+  font-size: 0.6rem;
+  color: #fff;
+}
