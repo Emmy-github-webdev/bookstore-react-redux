@@ -1,5 +1,6 @@
 import React from 'react';
-import { Progress } from 'antd';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../../redux/books/Books';
@@ -41,7 +42,9 @@ const SingleBook = (props) => {
       <div className="right-container">
 
         <div className="percent">
-          <Progress type="circle" percent={percent} showInfo={false} strokeColor="#379cf6" className="percent-range" />
+          <div style={{ width: 70, height: 70 }}>
+            <CircularProgressbar value={percent} />
+          </div>
           <div className="percent-inner">
             <span className="percent-info">
               {percent}
@@ -49,6 +52,11 @@ const SingleBook = (props) => {
             </span>
             <span className="completed">Completed</span>
           </div>
+        </div>
+        <div className="singlebook-Current-chapter">
+          <h3 className="currentChapter">CURRENT CHAPTER</h3>
+          <span className="numberChapter">Chapter</span>
+          <button className="updateButton" type="button"><span>UPDATE PROGRESS</span></button>
         </div>
       </div>
     </div>

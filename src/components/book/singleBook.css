@@ -4,10 +4,9 @@
   border-radius: 4px;
   background: #fff;
   border: solid 1px #fff;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5px;
+  gap: 2px;
 }
 
 .single-book-category,
@@ -73,23 +72,60 @@
   margin: 0.188rem 18.625rem 0.125rem 1.063rem;
 }
 
+.right-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-right: 50%;
+}
+
 .percent {
-  /* display: flex;
-  flex-direction: column; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .percent-inner {
-  margin-left: 55%;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .percent-info {
-  margin: 0.063rem 1.75rem 0 0.688rem;
-  font-size: 2rem;
+  font-size: 1.1rem;
+  color: #000;
+}
+
+.currentChapter,
+.percent-info,
+.numberChapter,
+.updateButton span {
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: #000;
+}
+
+.singlebook-Current-chapter {
+  margin-left: 1rem;
+}
+
+.currentChapter {
+  font-size: 0.7rem;
+}
+
+.numberChapter {
+  font-size: 1rem;
+}
+
+.updateButton {
+  padding: 3px 45px;
+  background-color: #33a7ff;
+  border: solid 1px #e8e8e8;
+}
+
+.updateButton span {
+  font-size: 0.6rem;
+  color: #fff;
 }
