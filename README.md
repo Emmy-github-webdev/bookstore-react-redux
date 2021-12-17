@@ -32,7 +32,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Install
 
-- clone the [math magicians](git@github.com:Emmy-github-webdev/bookstore-react-redux.git).
+[Bookstore](git@github.com:Emmy-github-webdev/bookstore-react-redux.git)
 
 ## Usage
 - Test your GitHub flow, a linter and professional documentation ability
