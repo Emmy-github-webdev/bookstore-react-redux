@@ -46,6 +46,11 @@
   color: #b0b0b0;
 }
 
+.user {
+  color: #4c7ded;
+  margin-left: 20rem;
+}
+
 .menu {
   display: none;
 }

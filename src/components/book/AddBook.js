@@ -8,8 +8,6 @@ import './addBook.css';
 const AddBook = () => {
   const dispatch = useDispatch();
   const [newBook, setNewBook] = useState({ title: '' });
-  // const { Option } = Select;
-
   const addBookNameHandler = (e) => {
     setNewBook({ ...newBook, title: e.target.value });
   };
@@ -36,8 +34,8 @@ const AddBook = () => {
     <div className="addBook-container">
       <h2>Add New Book</h2>
       <div className="book-inner-info">
-
         <Input placeholder="Add Book" onChange={addBookNameHandler} value={newBook.title} className="book-name" />
+        <Input placeholder="Category" className="category-name" />
         <button className="submitButton" type="button" onClick={submitHandler}><span>ADD BOOK</span></button>
 
       </div>
