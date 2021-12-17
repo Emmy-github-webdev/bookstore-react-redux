@@ -31,14 +31,16 @@ To get a local copy up and running follow these simple example steps.
 - Install react-redux
 
 ## Install
-- clone the [Bookstore](git@github.com:Emmy-github-webdev/bookstore-react-redux.git).
+
+- clone the [math magicians](git@github.com:Emmy-github-webdev/bookstore-react-redux.git).
+
 ## Usage
 - Test your GitHub flow, a linter and professional documentation ability
 ## Run tests
 - Run npm start to run the project
 ## Deployment
-- Deploy to either [Heroku](https://www.heroku.com/), [Netlify](https://www.netlify.com/),
-- Navigate to page in the prject settings and publish
+- Deploy to either [Heroku](https://www.heroku.com/) or [Netlify](https://www.netlify.com/),
+
 
 ## Dependencies
 
@@ -58,7 +60,8 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the (https://github.com/Emmy-github-webdev/bookstore-react-redux/issues).
+Feel free to check the [issues page](https://github.com/Emmy-github-webdev/bookstore-react-redux/issues).
+
 
 ## Show your support
 
